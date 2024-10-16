@@ -1,7 +1,8 @@
 package org.example.behavioral.observer.exercise.subscriber;
 
-public class Readers implements Subscriber{
+import org.example.behavioral.observer.exercise.Notification;
 
+public class Readers implements Subscriber{
     private String name;
 
     public Readers(String name) {
@@ -9,7 +10,7 @@ public class Readers implements Subscriber{
     }
 
     @Override
-    public void notify(String message) {
-        System.out.println("notifying user "+name +" "+message);
+    public void notify(Notification notification) {
+        System.out.println("Notifying user " + name + " about " + notification.getEventType() + ": " + notification.getMessage());
     }
 }
